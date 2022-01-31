@@ -10,7 +10,7 @@ diffs = data[:,2]/1000
 
 plt.style.use('ggplot')
 
-def plot_stuff(years, sums, diffs):
+def plot_account_balance(years, sums, diffs):
     fig = plt.figure()
     gs = gridspec.GridSpec(2, 1)
 
