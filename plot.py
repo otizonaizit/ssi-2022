@@ -3,13 +3,14 @@ import matplotlib.pyplot as plt
 from matplotlib import gridspec
 from matplotlib.ticker import MultipleLocator
 
-
-data = np.loadtxt('stats.csv', delimiter=',')
-years = data[:,0]
-sums = data[:,1]/1000
-diffs = data[:,2]/1000
-
 plt.style.use('ggplot')
+
+def load_data(filename):
+    data = np.loadtxt(filename, delimiter=',')
+    years = data[:,0]
+    sums = data[:,1]/1000
+    diffs = data[:,2]/1000
+    return years, sums, diffs
 
 def plot_account_balance(years, sums, diffs):
     fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
@@ -31,6 +32,7 @@ def save_plot_to(fig, filename):
 
 
 if __name__ == '__main__':
+    years, sums, diffs = load_data('stats.csv')
     fig = plot_account_balance(years, sums, diffs)
     save_plot_to(fig, 'plot.png')
     plt.show()
