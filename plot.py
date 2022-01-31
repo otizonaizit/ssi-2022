@@ -32,5 +32,5 @@ def plot_account_balance(years, sums, diffs):
     plt.subplots_adjust(hspace=.01)
     plt.show()
 
-plot_stuff(years, sums, diffs)
+plot_account_balance(years, sums, diffs)
 
