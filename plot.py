@@ -26,6 +26,11 @@ def plot_account_balance(years, sums, diffs):
     fig.subplots_adjust(hspace=.01)
     return fig
 
-fig = plot_account_balance(years, sums, diffs)
+def save_plot_to(fig, filename):
+    fig.savefig(filename)
 
-plt.show()
+
+if __name__ == '__main__':
+    fig = plot_account_balance(years, sums, diffs)
+    save_plot_to(fig, 'plot.png')
+    plt.show()
